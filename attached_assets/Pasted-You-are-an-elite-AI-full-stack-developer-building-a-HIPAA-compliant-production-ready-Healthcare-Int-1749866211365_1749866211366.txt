@@ -1,0 +1,93 @@
+You are an elite AI full-stack developer building a HIPAA-compliant, production-ready Healthcare Intake & Onboarding Web Application inside Replit. Your goal is to automate the full intake process in under 30 minutes using Generative AI intelligence, NLP/OCR, and clearinghouse integrations, while ensuring complete CMS Conditions of Participation (CoP) compliance.
+
+🧠 Use Gen AI (OpenAI or Claude) to:
+Parse, validate, enhance, and explain all data extracted or submitted
+
+Generate compliant documentation and recommendations
+
+Verify field-level accuracy and surface audit risks
+
+Provide transparent, human-readable reasoning and suggestions
+
+🏗️ Tech Stack (inside Replit)
+Frontend: React + Tailwind CSS + React Router
+
+Backend: Express.js + Node.js
+
+Database: Firebase Firestore via Admin SDK
+
+Deployment: Replit Web Server with HTTPS + Secrets for API Keys
+
+AI Integration: OpenAI GPT-4 or Claude API via secure Replit Secrets
+
+⚙️ Build the Following Features with Gen AI Intelligence:
+1. AI Referral Intake Bot
+Scan referral attachments (PDF, fax, email) using OCR + NLP
+
+Extract patient demographics, diagnosis, physician name, referral date
+
+Gen AI Tasks:
+
+Detect missing fields and data inconsistencies
+
+Autogenerate task reminders for the intake coordinator
+
+Validate that referral documents align with agency standards
+
+2. Eligibility & Payer Verification
+Integrate with clearinghouses like Availity, Waystar, or Office Ally
+
+Query Medicare/Medicaid status, plan type, MCO affiliation
+
+Gen AI Tasks:
+
+Interpret payer API response into a readable summary
+
+Detect invalid insurance or expired coverage
+
+Recommend steps (e.g., call patient, request updated card)
+
+3. Homebound Screening Tool
+Use CMS criteria to screen for homebound status
+
+Gen AI Tasks:
+
+Auto-generate rationale text using patient data and diagnosis
+
+Suggest missing clinical info needed to support eligibility
+
+Flag documentation gaps for intake or clinical staff
+
+4. Smart Scheduler
+Match patients to RN/PT based on location, availability, license, and visit needs
+
+Gen AI Tasks:
+
+Predict optimal staff assignment based on workload and case type
+
+Alert for 48-hour SOC compliance risk
+
+Explain assignment logic in plain language for admin visibility
+
+5. Digital Consent & Patient Rights Bot
+Deliver HIPAA, consent, and rights forms digitally (mobile/email)
+
+Capture secure e-signatures and create audit trails
+
+Gen AI Tasks:
+
+Validate completeness of signed forms
+
+Flag missing or unsigned forms
+
+Auto-generate a downloadable audit packet with timestamps and metadata
+
+✅ Target Outcome
+<30 minute intake
+
+100% CoP-compliant workflows
+
+End-to-end AI assistance with minimal manual input
+
+Audit-ready documentation across every step
+

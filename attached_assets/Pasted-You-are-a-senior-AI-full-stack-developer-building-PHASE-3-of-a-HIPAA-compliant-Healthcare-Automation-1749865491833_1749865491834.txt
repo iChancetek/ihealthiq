@@ -1,0 +1,113 @@
+You are a senior AI full-stack developer building PHASE 3 of a HIPAA-compliant Healthcare Automation Platform. Your objective is to develop a super-intelligent, Gen AI-powered Billing, Claims, and Denials Management system that improves cash flow and drastically reduces revenue loss due to claim rejections, denials, or submission delays.
+
+Your AI system must automate, validate, and intelligently adapt to payer-specific billing behavior while offering real-time financial accuracy, insights, and recommendations.
+
+🎯 CORE GOAL:
+Increase reimbursement speed, reduce denials, and minimize human billing errors using Generative AI for intelligent automation, validation, and correction.
+
+✅ Features & AI-Enhanced Capabilities:
+1. AI Claim Generator
+Pull structured data from:
+
+Completed clinical visits
+
+Plan of Care (POC) approvals
+
+Authorization and referral records
+
+Autogenerate:
+
+CMS-1500 and UB-04 forms
+
+ANSI 837 electronic claims
+
+Seamlessly integrate with national clearinghouses (e.g., Availity, Office Ally).
+
+Use Gen AI to verify field mapping logic, detect data anomalies, and validate billing sequence logic.
+
+2. Pre-Submission Scrubbing Engine
+Validate critical fields:
+
+NPI, ICD-10 codes, CPT/HCPCS, service dates, signatures
+
+Flag:
+
+Missing documentation (e.g., unsigned notes)
+
+Non-billable services (e.g., services without POC approval)
+
+Use Gen AI to:
+
+Cross-check internal EHR/EMR data consistency
+
+Autocorrect errors and recommend remediation before submission
+
+Learn and flag risky submissions based on historical rejection patterns
+
+3. AI-Driven Billing Rules Engine
+Supports dynamic payer rule logic:
+
+State Medicaid MCO policies
+
+Medicare Advantage plans
+
+Private insurer-specific constraints
+
+Gen AI continually learns from denials, updates rule sets dynamically, and auto-tunes submission logic to improve approval rates.
+
+AI flags outdated rules and suggests new ones based on payer bulletin feeds and past adjudication trends.
+
+4. Denial Management Bot
+Import and parse:
+
+Electronic Remittance Advices (ERA)
+
+Explanation of Benefits (EOB)
+
+AI identifies denial reason codes (CO, OA, PR, etc.)
+
+Auto-categorize denial types:
+
+Technical errors, eligibility, authorization, missing data
+
+Suggest AI-generated remediation steps such as:
+
+Reauthorization requests
+
+Corrected claims
+
+Draft appeal initiation
+
+AI matches denial reasons with documentation and payer policies to guide best-next actions.
+
+5. Auto Appeals Assistant
+Autogenerate appeal letters using:
+
+Cited CMS regulations
+
+Plan-specific denial guidelines
+
+Prior precedent responses
+
+Personalize letters for the payer, referencing claim ID, patient, provider info, and reason for overturn.
+
+Use Gen AI to ensure proper tone, formatting, and regulation citation for maximum overturn success.
+
+🔐 Security & Compliance:
+Ensure all data processing complies with HIPAA, HITECH, and CMS standards.
+
+AI must maintain audit trails of all claim modifications and recommendations.
+
+🧠 Super-Intelligence Requirements:
+Gen AI must continuously learn from:
+
+Past approvals and denials
+
+Payer behavior shifts
+
+Documentation gaps
+
+Embed explainability: Allow admins to see why claims were flagged, denied, or fixed.
+
+Provide real-time claim health scoring and “risk of denial” metrics before submission.
+

@@ -1,0 +1,74 @@
+You are an expert full-stack AI developer tasked with integrating advanced Generative AI capabilities into a healthcare admin platform focused on Quality Assurance and Performance Improvement (QAPI), Risk Management, and Compliance Automation.
+
+Your goal is to build a real-time, AI-powered system that validates and confirms the accuracy of all input and tracked information to ensure admins have reliable, actionable insights into quality and compliance performance.
+
+Feature Requirements:
+QAPI Dashboard
+
+Develop a dashboard that tracks and visualizes key quality indicators such as:
+
+Patient falls
+
+Infections
+
+Wounds
+
+Missed visits
+
+Readmissions
+
+Provide dynamic trendlines for both patients and clinicians over customizable time frames.
+
+Automatically flag Centers of Medicare & Medicaid Services Conditions of Participation (CoP) or survey risk areas based on thresholds and historical data.
+
+Use Generative AI to cross-check incoming data for consistency and anomalies to confirm correctness before dashboard updates.
+
+Automated QAPI Reporting
+
+Generate monthly QAPI summary reports featuring:
+
+Graphs visualizing trends and performance
+
+A summary of top issues identified
+
+AI-generated root cause analysis suggestions for each issue
+
+Allow export of reports in formats suitable for surveyors or internal quality meetings.
+
+Use Gen AI to validate that reported data matches the underlying raw data, ensuring no discrepancies.
+
+Performance Improvement Projects (PIPs) Assistant
+
+Implement an AI assistant that:
+
+Recommends PIPs tailored to agency-specific quality or compliance challenges detected.
+
+Assigns tasks automatically to responsible staff members.
+
+Tracks progress with deadline alerts and escalation notifications.
+
+Confirm that task assignments and statuses are correct using AI-driven data verification.
+
+Staff Compliance Monitor
+
+Track compliance metrics including:
+
+Documentation timeliness
+
+Credential expirations
+
+Training logs and completions
+
+Notify HR or admins proactively about overdue or upcoming compliance requirements.
+
+Use Gen AI to validate the accuracy and timeliness of compliance data and alerts.
+
+Additional Requirements:
+All features must support real-time data updating with automated verification by Gen AI to reduce human error.
+
+Design user-friendly UI/UX that provides clear visibility and actionable insights.
+
+Provide audit logs for all AI confirmations and flagged inconsistencies.
+
+Ensure HIPAA compliance and data security best practices throughout.
+

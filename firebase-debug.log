@@ -1,0 +1,47 @@
+[debug] [2026-01-20T19:53:22.298Z] ----------------------------------------------------------------------
+[debug] [2026-01-20T19:53:22.302Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chanc\Documents\iHealthIQ\iSyneraHealth\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting,functions
+[debug] [2026-01-20T19:53:22.302Z] CLI Version:   15.3.1
+[debug] [2026-01-20T19:53:22.303Z] Platform:      win32
+[debug] [2026-01-20T19:53:22.303Z] Node Version:  v24.13.0
+[debug] [2026-01-20T19:53:22.303Z] Time:          Tue Jan 20 2026 14:53:22 GMT-0500 (Eastern Standard Time)
+[debug] [2026-01-20T19:53:22.303Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-20T19:53:29.991Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-20T19:53:29.993Z] > authorizing via signed-in user (isydneyai@gmail.com)
+[debug] [2026-01-20T19:53:29.993Z] [iam] checking project ihealthiq for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-01-20T19:53:29.997Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:29.997Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:30.000Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ihealthiq:testIamPermissions [none]
+[debug] [2026-01-20T19:53:30.001Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ihealthiq:testIamPermissions x-goog-quota-user=projects/ihealthiq
+[debug] [2026-01-20T19:53:30.001Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ihealthiq:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-20T19:53:30.469Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ihealthiq:testIamPermissions 200
+[debug] [2026-01-20T19:53:30.470Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ihealthiq:testIamPermissions {}
+[debug] [2026-01-20T19:53:30.470Z] [iam] error while checking permissions, command may fail: Authorization failed. This account is missing the following required permissions on project ihealthiq:
+
+  cloudfunctions.functions.create
+  cloudfunctions.functions.delete
+  cloudfunctions.functions.get
+  cloudfunctions.functions.list
+  cloudfunctions.functions.update
+  cloudfunctions.operations.get
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2026-01-20T19:53:30.471Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:30.471Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:30.472Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-01-20T19:53:30.472Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-01-20T19:53:30.667Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions 404
+[debug] [2026-01-20T19:53:30.667Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2026-01-20T19:53:30.669Z] [functions] service account IAM check errored, deploy may fail: Request to https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404}},"exit":1,"message":"Request to https://iam.googleapis.com/v1/projects/ihealthiq/serviceAccounts/ihealthiq@appspot.gserviceaccount.com:testIamPermissions had HTTP Error: 404, Unknown service account","status":404}
+[debug] [2026-01-20T19:53:30.672Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:30.672Z] Checked if tokens are valid: true, expires at: 1768942367358
+[debug] [2026-01-20T19:53:30.673Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ihealthiq [none]
+[debug] [2026-01-20T19:53:30.950Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ihealthiq 403
+[debug] [2026-01-20T19:53:30.950Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ihealthiq {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-01-20T19:53:30.951Z] Request to https://firebase.googleapis.com/v1beta1/projects/ihealthiq had HTTP Error: 403, The caller does not have permission
+[debug] [2026-01-20T19:53:31.009Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/ihealthiq had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\chanc\Documents\iHealthIQ\iSyneraHealth\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\chanc\Documents\iHealthIQ\iSyneraHealth\node_modules\firebase-tools\lib\apiv2.js:320:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[error] 
+[error] Error: Failed to get Firebase project ihealthiq. Please make sure the project exists and your account has permission to access it.

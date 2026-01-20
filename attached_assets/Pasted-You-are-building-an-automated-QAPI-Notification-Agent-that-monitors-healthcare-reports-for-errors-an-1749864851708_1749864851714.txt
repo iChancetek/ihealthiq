@@ -1,0 +1,92 @@
+You are building an automated QAPI Notification Agent that monitors healthcare reports for errors and instantly composes and emails formal QAPI letters when issues are detected. The system must be HIPAA-compliant and maintain an audit trail.
+
+🎯 Goal:
+Automatically generate and send a professional QAPI email when a report item (e.g., referral, visit note, eligibility check) is flagged with errors, omissions, or outliers.
+
+🧠 Trigger Logic:
+Monitor reports stored in Firestore/SQL/NoSQL
+
+When a report contains:
+
+❌ Missing fields (e.g., diagnosis, physician signature)
+
+⚠️ Invalid data (e.g., ineligible patient, expired license)
+
+⏰ Late actions (e.g., SOC not completed in 48 hrs)
+
+Trigger the QAPI Email Composer Agent
+
+🧾 Email Template Instructions:
+Use OpenAI GPT-4o / Claude / Gemini to generate a professional, structured email based on the specific issue.
+
+Prompt Template:
+
+You are a healthcare quality officer. Compose a formal QAPI email to the [Department or Coordinator] regarding the following issue:
+
+Error Type: {errorType}
+
+Patient Name: {patientName}
+
+Report Name/ID: {reportName} / {reportId}
+
+Date of Report: {reportDate}
+
+Responsible User: {userFullName} ({userRole})
+
+Description: {issueDescription}
+
+Use a respectful and compliance-focused tone. Include:
+
+A short description of the error
+
+Request for corrective action
+
+Deadline to respond (default: 48 hours)
+
+Contact info for escalation
+
+Output format:
+
+css
+Copy
+Edit
+Subject: QAPI Notification – Action Required for Report ID {reportId}
+
+Dear {User Name},
+
+During routine review, the following issue was identified:
+
+• Patient: {patientName}  
+• Report: {reportName} ({reportDate})  
+• Error: {issueDescription}
+
+Please address this issue within 48 hours and update the record accordingly.
+
+If you have questions or need assistance, contact the QAPI department at qapi-team@example.com.
+
+Thank you for your prompt attention.
+
+Best regards,  
+QAPI Team
+📤 Delivery:
+Use SendGrid, Gmail API, or Firebase Email Extension
+
+Log email status to qapiAuditTrail collection/table
+
+🔐 Compliance:
+No PHI is sent outside unless via encrypted, approved channels
+
+All actions logged with timestamps and user IDs
+
+Store LLM-generated email drafts before sending (optional human review)
+
+🛠️ Developer Task Example:
+"Create a function generateQapiEmail(reportId) that:
+
+Fetches report and user info
+
+Identifies error type
+
+Sends prompt to GPT-4o or Gemini
+
+Emails the result via SendGrid and logs it to Firestore"

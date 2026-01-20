@@ -1,0 +1,128 @@
+Role: You are a world-class Generative AI Engineer building HIPAA-compliant, enterprise-grade healthcare automation within the iSynera Healthcare Platform.
+
+Goal: Add six advanced Generative AI-powered modules to the iSynera platform that significantly reduce clinician workload, increase referral response speed, and automate high-volume operational processes. All modules must integrate with existing EHR/EMR data and respect data privacy and access control policies.
+
+🧠 Core Features to Build with Generative AI:
+🔁 1. AI-Driven Referral Acceleration Engine
+Goal: Automate the extraction and population of key patient and referral data from documents (eFAX, HL7 Direct messages).
+
+Use LLM-based document parsing to extract patient demographics, diagnosis, insurance info, care history.
+
+Parse PDFs, TIFFs, HL7 CDA, and FHIR messages.
+
+Populate EHR fields using FHIR APIs or HL7 v2 interfaces.
+
+Flag incomplete records with suggested autofill options.
+
+Enable response auto-drafting with pre-validated data.
+
+AI Enhancements:
+
+Named Entity Recognition (NER) for key fields.
+
+Document classification (e.g., referral vs. assessment).
+
+Use Chain-of-Thought reasoning to flag ambiguous data entries.
+
+🗣️ 2. Ambient Listening + Smart Transcription Module ("iSynera Scribe")
+Goal: Enable real-time voice-to-text transcription for patient assessments and auto-populate EHR fields.
+
+Integrate Whisper or a similar open-source STT model.
+
+Use GPT-4 or fine-tuned LLM to convert transcript into structured summaries.
+
+Match output to SOAP (Subjective, Objective, Assessment, Plan) format.
+
+Highlight confidence scores for clinician approval.
+
+AI Enhancements:
+
+Use fine-tuned LLM for healthcare summarization.
+
+Smart auto-suggestion for CPT/ICD code hints from audio.
+
+Allow voice commands like “Mark vitals abnormal” or “Flag this for review”.
+
+🧾 3. Referral Packet Summary Generator
+Goal: Use Generative AI to extract and summarize key patient referral packet info for rapid triage.
+
+Accept multi-page documents, handwritten notes, scanned images.
+
+Convert into concise clinical overviews: symptoms, conditions, medications, risk level.
+
+Generate clinician-facing summaries with embedded links to source snippets.
+
+AI Enhancements:
+
+Multi-document summarization and cross-referencing.
+
+Clinical urgency prediction (e.g., triage level score).
+
+Suggest next best action or required follow-up steps.
+
+🧠 4. AI-Supported HOPE Clinical Decision Module
+Goal: Assist hospice agencies in scoring and analyzing the HOPE assessment for care planning.
+
+Ingest structured/unstructured assessment input.
+
+AI returns suggested symptom impact ranking with medical reasoning.
+
+Supports shared decision-making with rationale and explanations.
+
+AI Enhancements:
+
+Explainable AI (XAI) output for regulatory trust.
+
+Automatically detect symptom trends or inconsistencies.
+
+Integrate with future palliative care guidelines and CMS mandates.
+
+📋 5. Generative Chart Review + AI Coding Assistant
+Goal: Support coders and reviewers by pre-analyzing visit notes, progress reports, and assessments.
+
+Extract relevant codes (ICD, CPT, HCPCS).
+
+Highlight discrepancies in documentation.
+
+Provide coding justification for reimbursement accuracy.
+
+AI Enhancements:
+
+Use LLM + rules engine hybrid model for compliance validation.
+
+Detect missing or conflicting medical necessity documentation.
+
+Offer "coding confidence score" and recommended flags.
+
+⚙️ 6. Autonomous AI Agents for Routine Ops
+Goal: Develop purpose-built autonomous agents to perform recurring operational tasks:
+
+Agent A: Handles appointment scheduling and calendar conflicts.
+
+Agent B: Auto-manages prior authorizations via payer APIs.
+
+Agent C: Engages patients via SMS/email for reminders, intake, and feedback collection.
+
+AI Enhancements:
+
+Use LangChain/AutoGen-style orchestration to allow agents to collaborate.
+
+Secure task queues for retry/failure handling.
+
+RAG (Retrieval-Augmented Generation) agents pull knowledge from internal policy and SOP docs.
+
+📦 Technical Specifications:
+Language: Python 3.10+, TypeScript (for front-end module)
+
+Frameworks: FastAPI, LangChain, Streamlit (for prototyping), Next.js (for UI)
+
+Models: GPT-4, Whisper, PubMedBERT (or BioGPT), TrOCR (for scanned docs)
+
+Data Pipelines: FHIR-compliant ETL, PostgreSQL, Redis, Kafka (for real-time ops)
+
+Security: Implement OAuth2.0, role-based access, audit logging, and PHI redaction.
+
+Compliance: HIPAA, HITECH, SOC 2 Type II-ready architecture.
+
+🧪 Bonus:
+Include a unit test framework (e.g., Pytest), mock FHIR APIs, and synthetic PHI for development/testing. Wrap features as reusable microservices in Docker containers with Helm charts for Kubernetes deployment

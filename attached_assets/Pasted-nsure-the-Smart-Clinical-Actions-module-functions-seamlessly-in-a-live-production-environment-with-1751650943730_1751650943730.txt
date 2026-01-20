@@ -1,0 +1,75 @@
+nsure the Smart Clinical Actions module functions seamlessly in a live, production environment, with full AI-driven automation, accurate data extraction, and intuitive clinical workflows stemming from SOAP notes.
+
+✅ 1. Core Functional Requirements
+🧠 AI-Powered Clinical Automation from SOAP Notes
+Enable real-time extraction of structured data from AI-generated. Allow manually edited  and of SOAP notes.
+
+Key actions include:
+
+Extract Medications
+
+Analyze Referrals
+
+These actions should trigger appropriate downstream workflows in Orders, Referrals, and Refill modules.
+
+⚠️ Critical Issues to Resolve
+The following features are currently non-functional and must be corrected for production readiness:
+
+Save & Continue: Button does not function; changes are not being retained.
+
+Change Patient Option: Selecting or switching patients fails to update the clinical context.
+
+Search Function: The search feature is unresponsive or inaccurate when querying patient data.
+
+Clinical Documentation Access: Notes are not saving or appearing in the Clinical Documentation section.
+→ All of the above must be resolved with proper session handling, data persistence, and user feedback indicators.
+
+✏️ 2. SOAP Note Edit Capabilities
+Post-transcription SOAP notes must support:
+
+Manual text editing within a rich text editor or structured fields
+
+Voice-based dictation for updates and corrections
+
+All edits should sync back to the linked patient record and update downstream modules in real time.
+
+⚙️ 3. Intelligent Clinical Automation
+A. Orders & Refills
+Enable auto-population of medication orders and refill entries directly from transcribed or dictated notes.
+
+Fields to extract and populate include:
+
+Medication Name
+
+Dosage
+
+Frequency
+
+Duration
+
+B. Referrals
+Referrals should be automatically pre-filled based on:
+
+Patient’s historical usage of home health, DME, or specialist services
+
+Required features:
+
+One-click referral generation
+
+Integration with preferred provider directories
+
+C. Refill Request Workflow
+Implement full support for structured refill request workflows, including:
+
+Auto-filled medication data from patient history
+
+Review interface for approval or modification
+
+Submission via eFax or connected EHR systems
+
+🔒 Compliance & Production Readiness
+All actions must adhere to HIPAA and clinical documentation standards.
+
+Ensure full audit logging, data persistence, and role-based access controls are in place.
+
+Perform QA testing across user types (e.g., Doctor, Nurse, Admin) in a mirrored production environment.

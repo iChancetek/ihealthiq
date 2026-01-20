@@ -1,0 +1,148 @@
+Configure Doctor Role UI and Feature Access in iSynera Healthcare Platform
+Objective:
+When a user with the role of "Doctor" logs into the platform, display a customized dashboard experience with access to the iSynera Scribe module and a dedicated Doctor’s Module containing AI-enhanced clinical tools.
+
+✅ Role-Based Access: Doctor
+Condition:
+If user.role == "Doctor"
+→ Load the Doctor Dashboard View
+
+📂 Modules Displayed to Doctor Users
+iSynera Scribe Module (Full Access)
+
+Allow unrestricted access to:
+
+Real-time and recorded transcription
+
+SOAP note editing and export
+
+ICD/CPT code suggestions
+
+Audio playback/download
+
+eFax and email of transcriptions
+
+Enable session audit logs and secure storage per patient.
+
+Doctor’s Module (Custom Clinical Tools)
+
+Module Name: DoctorsModule
+
+Sections:
+a. AI Scribe + Smart Referral System
+b. Clinical Orders
+c. Referral Management
+d. Decision Support
+e. EHR Integration
+
+💡 Doctor’s Module – Feature Details
+1. AI-Generated SOAP Notes
+Trigger: On recording completion or upload
+
+Features:
+
+Transcribe doctor-patient interaction (real-time or uploaded audio)
+
+Structure output into SOAP format
+
+Highlight billable ICD-10 codes and match to valid CPT codes
+
+Provide editable interface before finalizing
+
+Export as PDF, CCD, or integrate to EHR
+
+2. Smart Order & Refill Generation
+Trigger: From “Assessment” or “Plan” section
+
+Features:
+
+Auto-generate medication orders and refills
+
+Suggest dose adjustments based on patient history
+
+Support e-prescribing integration (e.g., Surescripts API or custom webhook)
+
+Option to edit or override AI suggestions before sending
+
+3. One-Click Referrals & Orders
+Trigger: From SOAP or diagnosis summary
+
+Referral Categories:
+
+Home Health: Skilled nursing, PT/OT/ST
+
+DME: Wheelchairs, oxygen, diabetic supplies
+
+Specialists: Cardiology, pulmonology, etc.
+
+Hospice: Triggered by terminal diagnoses or AI cues
+
+Features:
+
+Select provider from editable preferred provider list
+
+Auto-fill referral form with chart summary
+
+Send via HIPAA-compliant eFax (via ConcordFax, Updox API)
+
+Log each referral for compliance
+
+4. Decision Support (AI-Powered)
+AI Logic Triggers:
+
+SOAP content
+
+Diagnostic patterns
+
+Historical referral behaviors
+
+Payer rules (if available)
+
+Outputs:
+
+Suggested referrals/orders
+
+Warnings if required documentation is missing
+
+Payer coverage indicators
+
+Custom alerts based on practice protocols
+
+5. EHR-Compatible or Standalone Mode
+Export Options:
+
+Structured PDFs, CCDs, HL7 Documents
+
+EHR Integration:
+
+Support HL7/FHIR APIs for Athena, eClinicalWorks, DrChrono, etc.
+
+Option to enable standalone use with manual download/upload
+
+UI Option:
+
+Toggle: "Send to EHR" or "Download Chart"
+
+🔐 Security & Compliance
+Role-based access must restrict non-doctor roles from accessing these tools.
+
+All actions (referrals, orders, notes) must trigger audit logging with timestamps and user IDs.
+
+Ensure all transmitted data (e.g., eFax, ePrescribe) uses HIPAA-compliant encrypted APIs.
+
+Require 2FA/MFA for users accessing prescription and referral systems.
+
+📁 Suggested UI Layout
+Doctor Dashboard Tabs:
+
+iSynera Scribe
+
+Orders & Refills
+
+Referrals
+
+AI Recommendations
+
+Patient Charts
+
+EHR Integration & Export

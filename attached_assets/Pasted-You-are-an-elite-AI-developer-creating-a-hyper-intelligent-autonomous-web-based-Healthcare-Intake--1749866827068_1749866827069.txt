@@ -1,0 +1,114 @@
+You are an elite AI developer creating a hyper-intelligent, autonomous web-based Healthcare Intake & Onboarding application inside Replit using OpenAI GPT-4 or Claude AI.
+
+Your mission is to design a Generative AI system that performs the work of 10 highly-trained intake nurses in minutes—filling in all required fields, checking eligibility, scheduling, and preparing CMS-compliant documentation—all automatically.
+
+🧰 Your Tech Stack
+Frontend: React + Tailwind CSS + React Router
+
+Backend: Express.js + Node.js
+
+Database: Firebase Firestore (via Admin SDK)
+
+AI Layer: GPT-4 or Claude via Replit Secrets
+
+Deployment: Replit Web Server with HTTPS
+
+🎯 GOAL: Fully Autonomous, Super-Intelligent Intake Workflow
+Build a Gen AI-driven system that:
+
+Scans, interprets, and extracts referral data from any format (PDF, fax, email)
+
+Fills all patient intake forms automatically
+
+Validates data for accuracy, completeness, and CMS Conditions of Participation (CoP)
+
+Runs eligibility verification and payer checks
+
+Generates all documentation and digital consents
+
+Assigns staff and schedules visits
+
+Outputs a complete, audit-ready patient intake packet in < 15 minutes
+
+✅ System Capabilities to Implement
+🧾 1. Autonomous Referral Reader & Field Populator
+OCR/NLP engine scans documents and EMR files
+
+Gen AI intelligently:
+
+Fills fields: Name, DOB, Diagnosis, Physician, Referral Date, Insurance, Contact Info
+
+Writes medical summaries from unstructured notes
+
+Flags and resolves missing or suspicious data
+
+Writes explanations for flagged issues automatically
+
+✅ 2. Real-Time Eligibility & Insurance Checker
+API integration with clearinghouses (Availity, Waystar)
+
+Gen AI:
+
+Interprets eligibility reports
+
+Fills insurance forms with plan details
+
+Flags invalid/expired coverage
+
+Generates next steps (e.g. "Request updated Medicaid card")
+
+🏡 3. Homebound Screening & Documentation
+Uses CMS criteria to determine homebound eligibility
+
+Gen AI:
+
+Auto-writes rationale for homebound status based on diagnosis, mobility, and support needs
+
+Ensures required elements are present
+
+Suggests additions to strengthen clinical justification
+
+🧠 4. Smart Staff Scheduler
+Match patients to available RN/PT by:
+
+Location, license, time availability, and patient needs
+
+Gen AI:
+
+Optimizes schedule and suggests best-fit provider
+
+Flags missed SOC windows and scheduling conflicts
+
+Auto-adjusts and notifies admin/staff
+
+🖋️ 5. Digital Consent & Compliance Packet Creator
+Delivers HIPAA, patient rights, and consent forms digitally
+
+Gen AI:
+
+Auto-fills and explains each document
+
+Captures e-signatures securely
+
+Validates completeness
+
+Bundles documents into a timestamped compliance packet with an audit trail
+
+🔁 Super-Intelligent AI Loop
+At every step, the AI engine:
+
+Validates field entries
+
+Auto-generates missing content
+
+Flags risk areas with explanations
+
+Writes out a full summary of what was done, what’s pending, and next best actions
+
+🚀 Outcome
+10x nurse productivity, achieved through automation
+
+<15-minute full patient intake with minimal human input
+
+Audit-ready, CMS-aligned, compliant, and intelligent at every step
+

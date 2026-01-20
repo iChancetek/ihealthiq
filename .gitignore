@@ -1,0 +1,15 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+uploads/
+
+# Force include environment and database files for GitHub synchronization
+!.env
+!database-schema.sql
+!database-migration.js
+!DATABASE_SCHEMA_DOCUMENTATION.md
+!shared/schema.ts
+!drizzle.config.ts

@@ -1,0 +1,65 @@
+Prompt: Fix Patient Data Upload Failure and Implement AI-Powered Field Mapping
+Module: Patient Selection & Data Management
+Section: Select Patient → Upload Patient Data
+
+❌ Current Issue
+The Upload Patient Data feature is currently failing to function as expected. Specifically:
+
+Uploaded files are not being parsed correctly.
+
+No patient data fields are being populated in the form.
+
+Users are unable to review or create new patient records from the uploaded data.
+
+📥 Attached File Contains Required Fields
+🔗 Please refer to the attached file — it contains the full list of fields that must be captured and mapped when creating a new patient record. These fields should serve as the data model for the upload process.
+
+✅ Required Fixes and Enhancements
+1. AI-Powered Field Extraction
+Use AI/NLP to automatically extract all relevant data from uploaded files (CSV or PDF).
+
+The system must intelligently map extracted values to their corresponding fields in the new patient form.
+
+2. Field Coverage
+Ensure all fields listed in the attached file are fully supported during extraction and mapping, including:
+
+Patient demographics (Name, DOB, Gender, etc.)
+
+Contact details
+
+Insurance and provider information
+
+Medical history, allergies, medications, referral details, etc.
+
+3. Pre-Creation Review Interface
+After data extraction:
+
+Display a review screen with all pre-filled fields.
+
+Allow the user to manually correct or complete missing data before submission.
+
+Enable the “Create Patient” button only after review is complete.
+
+🔁 Expected Workflow
+User selects “Upload Patient Data”
+
+Uploads a CSV or PDF document
+
+AI extracts and auto-fills the patient form
+
+Review screen displays all mapped fields
+
+User reviews, edits, and confirms the data
+
+User clicks “Create Patient” to save the record
+
+🔒 Compliance & Integrity
+Ensure the entire upload and data entry process complies with HIPAA standards.
+
+Include:
+
+Encrypted file uploads
+
+Audit logging of AI extraction and user corrections
+
+Role-based access controls
