@@ -71,21 +71,22 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
 });
 
 // START SERVER
-// In Cloud Functions (FIREBASE_CONFIG present), don't start a server - export function instead
-// In App Hosting or local dev, start the HTTP server
-if (!process.env.FIREBASE_CONFIG) {
+// App Hosting runs on Cloud Run and sets K_SERVICE environment variable
+// Always start server in Cloud Run, but Cloud Functions will use the exported function
+const isCloudRun = !!process.env.K_SERVICE;
+if (isCloudRun || process.env.NODE_ENV !== "production") {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // Use PORT from environment (App Hosting) or default to 5000 (local dev)
+  // Use PORT from environment (Cloud Run/App Hosting) or default to 5000 (local dev)
   const port = parseInt(process.env.PORT || "5000", 10);
 
   server.listen({
     port,
-    host: "0.0.0.0", // Ensure binding to all interfaces
+    host: "0.0.0.0",
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
