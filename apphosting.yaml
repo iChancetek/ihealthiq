@@ -1,0 +1,13 @@
+# Settings for Firebase App Hosting
+runConfig:
+  # Changed to npm install to avoid package-lock sync errors
+  buildCommand: npm install && npm run build
+  runCommand: npm run start
+  workingDirectory: .
+env:
+  - variable: NODE_ENV
+    value: production
+  - variable: PORT
+    value: 8080
+  # Secrets should be configured in Firebase Console → App Hosting → Secrets
+  # DO NOT put actual API keys here - use Firebase secret management instead
