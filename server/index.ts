@@ -71,28 +71,24 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
 });
 
 // START SERVER
-// App Hosting runs on Cloud Run and sets K_SERVICE environment variable
-// Always start server in Cloud Run, but Cloud Functions will use the exported function
-const isCloudRun = !!process.env.K_SERVICE;
-if (isCloudRun || process.env.NODE_ENV !== "production") {
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
-
-  // Use PORT from environment (Cloud Run/App Hosting) or default to 5000 (local dev)
-  const port = parseInt(process.env.PORT || "5000", 10);
-
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+// Always start the server in App Hosting
+// The Cloud Function export below won't be used
+if (app.get("env") === "development") {
+  await setupVite(app, server);
+} else {
+  serveStatic(app);
 }
+
+// Use PORT from environment (Cloud Run/App Hosting) or default to 5000 (local dev)
+const port = parseInt(process.env.PORT || "5000", 10);
+
+server.listen({
+  port,
+  host: "0.0.0.0",
+  reusePort: true,
+}, () => {
+  log(`serving on port ${port}`);
+});
 
 // Export cloud function
 export const api = functions.region('us-east4').https.onRequest(app);
-
