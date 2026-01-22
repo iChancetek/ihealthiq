@@ -2,8 +2,7 @@
 runConfig:
   # Changed to npm install to avoid package-lock sync errors
   buildCommand: npm install && npm run build
-  runCommand: npm run start
-  workingDirectory: .
+  runCommand: node dist/index.js
 env:
   - variable: NODE_ENV
     value: production
