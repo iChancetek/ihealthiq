@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import session from "express-session";
 import { registerRoutes } from "./routes";
@@ -49,35 +50,48 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  const server = await registerRoutes(app);
+// Register routes (top-level await)
+let server: any;
+try {
+  console.log('Starting registerRoutes...');
+  server = await registerRoutes(app);
+  console.log('registerRoutes completed.');
+} catch (error) {
+  console.error("Failed to register routes:", error);
+  // Re-throw if critical, or let app continue (though it won't be much use)
+  throw error;
+}
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
 
-    res.status(status).json({ message });
-    throw err;
-  });
+  res.status(status).json({ message });
+  throw err;
+});
 
-  // LOCAL DEVELOPMENT ONLY
-  // In Cloud Functions, FIREBASE_CONFIG is present.
-  if (process.env.NODE_ENV !== "production" && !process.env.FIREBASE_CONFIG) {
-    if (app.get("env") === "development") {
-      await setupVite(app, server);
-    } else {
-      serveStatic(app);
-    }
-    const port = 5000;
-    server.listen({
-      port,
-      host: "0.0.0.0", // Ensure binding to all interfaces
-      reusePort: true,
-    }, () => {
-      log(`serving on port ${port}`);
-    });
+// START SERVER
+// In Cloud Functions (FIREBASE_CONFIG present), don't start a server - export function instead
+// In App Hosting or local dev, start the HTTP server
+if (!process.env.FIREBASE_CONFIG) {
+  if (app.get("env") === "development") {
+    await setupVite(app, server);
+  } else {
+    serveStatic(app);
   }
-})();
+
+  // Use PORT from environment (App Hosting) or default to 5000 (local dev)
+  const port = parseInt(process.env.PORT || "5000", 10);
+
+  server.listen({
+    port,
+    host: "0.0.0.0", // Ensure binding to all interfaces
+    reusePort: true,
+  }, () => {
+    log(`serving on port ${port}`);
+  });
+}
 
 // Export cloud function
-export const api = functions.https.onRequest(app);
+export const api = functions.region('us-east4').https.onRequest(app);
+
